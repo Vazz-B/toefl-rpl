@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Insert jika tidak ada error
         if (empty($errors)) {
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $hashedPassword = $password;
             
             $stmt = $db->prepare("INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'mahasiswa')");
             $stmt->execute([$username, $email, $hashedPassword]);

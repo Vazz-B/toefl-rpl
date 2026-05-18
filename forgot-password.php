@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user = $stmt->fetch();
                 
                 if ($user) {
-                    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+                    $hashedPassword = $password;
                     $stmt = $db->prepare("UPDATE users SET password = ?, reset_token = NULL, reset_token_expiry = NULL WHERE id = ?");
                     $stmt->execute([$hashedPassword, $user['id']]);
                     

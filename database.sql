@@ -125,21 +125,21 @@ CREATE INDEX idx_notifikasi_read ON notifikasi(is_read);
 
 -- ============================================================
 -- DATA DUMMY: Admin default
--- Password: admin123 (bcrypt hash)
+-- Password: password (plain text)
 -- ============================================================
 INSERT INTO users (username, email, password, nama_lengkap, role)
-VALUES ('admin', 'admin@upt-bahasa.utm.ac.id', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Administrator UPT Bahasa', 'admin');
+VALUES ('admin', 'admin@upt-bahasa.utm.ac.id', 'password', 'Administrator UPT Bahasa', 'admin');
 
 -- ============================================================
 -- DATA DUMMY: Mahasiswa
--- Password untuk semua: password123
+-- Password untuk semua: password
 -- ============================================================
 INSERT INTO users (username, email, password, nama_lengkap, nim, prodi, no_hp, role) VALUES
-('zibyan', 'zibyan@student.trunojoyo.ac.id', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Moch Zibyan Kadada', '240411100231', 'Teknik Informatika', '081234567890', 'mahasiswa'),
-('dien', 'dien@student.trunojoyo.ac.id', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Dien Latif Asyari', '240411100038', 'Teknik Informatika', '081234567891', 'mahasiswa'),
-('badruz', 'badruz@student.trunojoyo.ac.id', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Badruz Zaman Ash Sholih', '240411100140', 'Teknik Informatika', '081234567892', 'mahasiswa'),
-('denisa', 'denisa@student.trunojoyo.ac.id', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Denisa Triana Putri', '240411100175', 'Teknik Informatika', '081234567893', 'mahasiswa'),
-('nabiilah', 'nabiilah@student.trunojoyo.ac.id', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Nabiilah Rizqi Amalia', '230411100092', 'Teknik Informatika', '081234567894', 'mahasiswa');
+('zibyan', 'zibyan@student.trunojoyo.ac.id', 'password', 'Moch Zibyan Kadada', '240411100231', 'Teknik Informatika', '081234567890', 'mahasiswa'),
+('dien', 'dien@student.trunojoyo.ac.id', 'password', 'Dien Latif Asyari', '240411100038', 'Teknik Informatika', '081234567891', 'mahasiswa'),
+('badruz', 'badruz@student.trunojoyo.ac.id', 'password', 'Badruz Zaman Ash Sholih', '240411100140', 'Teknik Informatika', '081234567892', 'mahasiswa'),
+('denisa', 'denisa@student.trunojoyo.ac.id', 'password', 'Denisa Triana Putri', '240411100175', 'Teknik Informatika', '081234567893', 'mahasiswa'),
+('nabiilah', 'nabiilah@student.trunojoyo.ac.id', 'password', 'Nabiilah Rizqi Amalia', '230411100092', 'Teknik Informatika', '081234567894', 'mahasiswa');
 
 -- ============================================================
 -- DATA DUMMY: Jadwal Tes TOEFL

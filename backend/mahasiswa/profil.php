@@ -51,12 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (strlen($newPassword) < 6) $errors[] = 'Password baru minimal 6 karakter.';
             if ($newPassword !== $confirmPassword) $errors[] = 'Konfirmasi password tidak cocok.';
             
-            if (!password_verify($oldPassword, $user['password'])) {
+            if ($oldPassword !== $user['password']) {
                 $errors[] = 'Password lama salah.';
             }
             
             if (empty($errors)) {
-                $hashed = password_hash($newPassword, PASSWORD_BCRYPT);
+                $hashed = $newPassword;
                 $stmt = $db->prepare("UPDATE users SET password = ? WHERE id = ?");
                 $stmt->execute([$hashed, $user['id']]);
                 
