@@ -141,7 +141,7 @@ endif;
 
 // Normal view
 $pageTitle = 'Kartu Peserta';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -151,7 +151,7 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="content-card">
     <div class="card-header-custom">
         <h5>Preview Kartu Peserta</h5>
-        <a href="<?= BASE_URL ?>/mahasiswa/kartu-peserta.php?id=<?= $pendaftaranId ?>&print=1" target="_blank" class="btn btn-accent btn-sm">
+        <a href="<?= BASE_URL ?>/backend/mahasiswa/kartu-peserta.php?id=<?= $pendaftaranId ?>&print=1" target="_blank" class="btn btn-accent btn-sm">
             <i class="bi bi-printer me-1"></i> Cetak / Download PDF
         </a>
     </div>
@@ -184,4 +184,4 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

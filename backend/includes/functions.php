@@ -107,7 +107,7 @@ function requireAdmin() {
     requireLogin();
     if (!isAdmin()) {
         setFlash('danger', 'Anda tidak memiliki akses ke halaman ini.');
-        redirect('/mahasiswa/dashboard.php');
+        redirect('/backend/mahasiswa/dashboard.php');
     }
 }
 
@@ -118,7 +118,7 @@ function requireMahasiswa() {
     requireLogin();
     if (!isMahasiswa()) {
         setFlash('danger', 'Anda tidak memiliki akses ke halaman ini.');
-        redirect('/admin/dashboard.php');
+        redirect('/backend/admin/dashboard.php');
     }
 }
 

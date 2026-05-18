@@ -22,7 +22,7 @@ $flash = getFlash();
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="<?= BASE_URL ?>/assets/css/style.css" rel="stylesheet">
+    <link href="<?= BASE_URL ?>/frontend/assets/css/style.css" rel="stylesheet">
 </head>
 <body>
     <?php if (isLoggedIn() && (isAdmin() || isMahasiswa())): ?>
@@ -47,63 +47,63 @@ $flash = getFlash();
             <ul class="sidebar-nav">
                 <?php if (isAdmin()): ?>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/admin/dashboard.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'dashboard.php' && isAdmin() ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/admin/dashboard.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'dashboard.php' && isAdmin() ? 'active' : '' ?>">
                         <i class="bi bi-speedometer2"></i> <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/admin/jadwal.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'jadwal.php' && isAdmin() ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/admin/jadwal.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'jadwal.php' && isAdmin() ? 'active' : '' ?>">
                         <i class="bi bi-calendar-event"></i> <span>Kelola Jadwal</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/admin/verifikasi.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'verifikasi.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/admin/verifikasi.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'verifikasi.php' ? 'active' : '' ?>">
                         <i class="bi bi-check-circle"></i> <span>Verifikasi Pembayaran</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/admin/peserta.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'peserta.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/admin/peserta.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'peserta.php' ? 'active' : '' ?>">
                         <i class="bi bi-people"></i> <span>Data Peserta</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/admin/input-skor.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'input-skor.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/admin/input-skor.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'input-skor.php' ? 'active' : '' ?>">
                         <i class="bi bi-pencil-square"></i> <span>Input Skor</span>
                     </a>
                 </li>
                 <?php else: ?>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/dashboard.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'dashboard.php' && isMahasiswa() ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/dashboard.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'dashboard.php' && isMahasiswa() ? 'active' : '' ?>">
                         <i class="bi bi-speedometer2"></i> <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/jadwal.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'jadwal.php' && isMahasiswa() ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/jadwal.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'jadwal.php' && isMahasiswa() ? 'active' : '' ?>">
                         <i class="bi bi-calendar-event"></i> <span>Jadwal Tes</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/daftar.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'daftar.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/daftar.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'daftar.php' ? 'active' : '' ?>">
                         <i class="bi bi-file-earmark-text"></i> <span>Pendaftaran</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/status.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'status.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/status.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'status.php' ? 'active' : '' ?>">
                         <i class="bi bi-clock-history"></i> <span>Status Pendaftaran</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/kartu-peserta.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'kartu-peserta.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/kartu-peserta.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'kartu-peserta.php' ? 'active' : '' ?>">
                         <i class="bi bi-card-heading"></i> <span>Kartu Peserta</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/hasil.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'hasil.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/hasil.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'hasil.php' ? 'active' : '' ?>">
                         <i class="bi bi-bar-chart-line"></i> <span>Hasil Tes</span>
                     </a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/notifikasi.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'notifikasi.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/notifikasi.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'notifikasi.php' ? 'active' : '' ?>">
                         <i class="bi bi-bell"></i> <span>Notifikasi</span>
                         <?php if ($notifCount > 0): ?>
                         <span class="badge bg-danger rounded-pill ms-auto"><?= $notifCount ?></span>
@@ -113,7 +113,7 @@ $flash = getFlash();
                 <?php endif; ?>
                 <hr class="sidebar-divider">
                 <li class="sidebar-nav-item">
-                    <a href="<?= BASE_URL ?>/mahasiswa/profil.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'profil.php' ? 'active' : '' ?>">
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/profil.php" class="sidebar-nav-link <?= basename($_SERVER['PHP_SELF']) === 'profil.php' ? 'active' : '' ?>">
                         <i class="bi bi-person-gear"></i> <span>Profil</span>
                     </a>
                 </li>
@@ -135,7 +135,7 @@ $flash = getFlash();
                     </button>
                     <div class="d-flex align-items-center ms-auto">
                         <?php if (isMahasiswa()): ?>
-                        <a href="<?= BASE_URL ?>/mahasiswa/notifikasi.php" class="btn btn-link position-relative me-3">
+                        <a href="<?= BASE_URL ?>/backend/mahasiswa/notifikasi.php" class="btn btn-link position-relative me-3">
                             <i class="bi bi-bell fs-5"></i>
                             <?php if ($notifCount > 0): ?>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -149,7 +149,7 @@ $flash = getFlash();
                                 <i class="bi bi-person-circle me-1"></i> <?= e($_SESSION['username'] ?? 'User') ?>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/mahasiswa/profil.php"><i class="bi bi-person-gear me-2"></i>Profil</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/backend/mahasiswa/profil.php"><i class="bi bi-person-gear me-2"></i>Profil</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item text-danger" href="<?= BASE_URL ?>/logout.php"><i class="bi bi-box-arrow-left me-2"></i>Logout</a></li>
                             </ul>

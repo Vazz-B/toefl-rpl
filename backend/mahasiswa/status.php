@@ -58,7 +58,7 @@ $stmt->execute([$userId]);
 $pendaftaranList = $stmt->fetchAll();
 
 $pageTitle = 'Status Pendaftaran';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -72,7 +72,7 @@ require_once __DIR__ . '/../includes/header.php';
             <i class="bi bi-inbox d-block"></i>
             <h5>Belum Ada Pendaftaran</h5>
             <p>Anda belum melakukan pendaftaran tes TOEFL.</p>
-            <a href="<?= BASE_URL ?>/mahasiswa/jadwal.php" class="btn btn-accent">Daftar Sekarang</a>
+            <a href="<?= BASE_URL ?>/backend/mahasiswa/jadwal.php" class="btn btn-accent">Daftar Sekarang</a>
         </div>
     </div>
 </div>
@@ -169,13 +169,13 @@ require_once __DIR__ . '/../includes/header.php';
                 <?php endif; ?>
                 
                 <?php if ($p['status'] === 'verified' || $p['status'] === 'completed'): ?>
-                <a href="<?= BASE_URL ?>/mahasiswa/kartu-peserta.php?id=<?= $p['id'] ?>" class="btn btn-outline-primary btn-sm w-100 mb-2">
+                <a href="<?= BASE_URL ?>/backend/mahasiswa/kartu-peserta.php?id=<?= $p['id'] ?>" class="btn btn-outline-primary btn-sm w-100 mb-2">
                     <i class="bi bi-download me-1"></i> Unduh Kartu Peserta
                 </a>
                 <?php endif; ?>
                 
                 <?php if ($p['total_skor']): ?>
-                <a href="<?= BASE_URL ?>/mahasiswa/hasil.php" class="btn btn-outline-success btn-sm w-100">
+                <a href="<?= BASE_URL ?>/backend/mahasiswa/hasil.php" class="btn btn-outline-success btn-sm w-100">
                     <i class="bi bi-bar-chart-line me-1"></i> Lihat Skor
                 </a>
                 <?php endif; ?>
@@ -187,4 +187,4 @@ require_once __DIR__ . '/../includes/header.php';
 
 <?php endif; ?>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

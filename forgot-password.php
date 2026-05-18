@@ -4,10 +4,10 @@
  * Untuk saat ini menggunakan reset dengan token sederhana
  * Di production seharusnya kirim email
  */
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/backend/includes/functions.php';
 
 if (isLoggedIn()) {
-    redirect(isAdmin() ? '/admin/dashboard.php' : '/mahasiswa/dashboard.php');
+    redirect(isAdmin() ? '/backend/admin/dashboard.php' : '/backend/mahasiswa/dashboard.php');
 }
 
 $errors = [];
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $tokenFromUrl = $_GET['token'] ?? null;
 
 $pageTitle = 'Lupa Password';
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/frontend/templates/header.php';
 ?>
 
 <div class="auth-page">
@@ -196,4 +196,4 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
+<?php require_once __DIR__ . '/frontend/templates/footer.php'; ?>

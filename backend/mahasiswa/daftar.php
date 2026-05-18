@@ -133,7 +133,7 @@ $stmt = $db->query("
 $jadwalOptions = $stmt->fetchAll();
 
 $pageTitle = 'Form Pendaftaran';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -145,7 +145,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="card-body">
         <div class="alert alert-warning mb-0">
             <i class="bi bi-exclamation-circle me-2"></i>
-            Anda sudah terdaftar pada jadwal ini. Silakan cek <a href="<?= BASE_URL ?>/mahasiswa/status.php">Status Pendaftaran</a>.
+            Anda sudah terdaftar pada jadwal ini. Silakan cek <a href="<?= BASE_URL ?>/backend/mahasiswa/status.php">Status Pendaftaran</a>.
         </div>
     </div>
 </div>
@@ -220,11 +220,11 @@ require_once __DIR__ . '/../includes/header.php';
                 <button type="submit" class="btn btn-accent">
                     <i class="bi bi-send me-1"></i> Kirim Pendaftaran
                 </button>
-                <a href="<?= BASE_URL ?>/mahasiswa/jadwal.php" class="btn btn-outline-secondary">Batal</a>
+                <a href="<?= BASE_URL ?>/backend/mahasiswa/jadwal.php" class="btn btn-outline-secondary">Batal</a>
             </div>
         </form>
     </div>
 </div>
 <?php endif; ?>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

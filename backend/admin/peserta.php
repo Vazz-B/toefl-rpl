@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 }
 
 $pageTitle = 'Data Peserta';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -162,7 +162,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <?php endif; ?>
                         </td>
                         <td>
-                            <a href="<?= BASE_URL ?>/admin/input-skor.php?pendaftaran_id=<?= $p['id'] ?>" class="btn btn-outline-primary btn-sm" title="Input Skor">
+                            <a href="<?= BASE_URL ?>/backend/admin/input-skor.php?pendaftaran_id=<?= $p['id'] ?>" class="btn btn-outline-primary btn-sm" title="Input Skor">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                         </td>
@@ -175,4 +175,4 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

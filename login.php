@@ -2,11 +2,11 @@
 /**
  * Login Page
  */
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/backend/includes/functions.php';
 
 // Redirect jika sudah login
 if (isLoggedIn()) {
-    redirect(isAdmin() ? '/admin/dashboard.php' : '/mahasiswa/dashboard.php');
+    redirect(isAdmin() ? '/backend/admin/dashboard.php' : '/backend/mahasiswa/dashboard.php');
 }
 
 $errors = [];
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 session_regenerate_id(true);
                 
                 setFlash('success', 'Selamat datang, ' . $user['username'] . '!');
-                redirect($user['role'] === 'admin' ? '/admin/dashboard.php' : '/mahasiswa/dashboard.php');
+                redirect($user['role'] === 'admin' ? '/backend/admin/dashboard.php' : '/backend/mahasiswa/dashboard.php');
             } else {
                 $errors[] = 'Email atau password salah.';
             }
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $pageTitle = 'Login';
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/frontend/templates/header.php';
 ?>
 
 <div class="auth-page">
@@ -103,4 +103,4 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
+<?php require_once __DIR__ . '/frontend/templates/footer.php'; ?>

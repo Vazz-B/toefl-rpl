@@ -16,8 +16,8 @@ define('APP_VERSION', '1.0.0');
 define('BASE_URL', '/toefl-registration');
 
 // Path
-define('ROOT_PATH', dirname(__DIR__));
-define('UPLOAD_PATH', ROOT_PATH . '/uploads/bukti-pembayaran/');
+define('ROOT_PATH', dirname(__DIR__, 2));
+define('UPLOAD_PATH', ROOT_PATH . '/backend/uploads/bukti-pembayaran/');
 define('MAX_UPLOAD_SIZE', 2 * 1024 * 1024); // 2MB
 define('ALLOWED_FILE_TYPES', ['image/jpeg', 'image/png', 'application/pdf']);
 define('ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'pdf']);

@@ -20,7 +20,7 @@ $stmt = $db->query("
 $jadwalList = $stmt->fetchAll();
 
 $pageTitle = 'Jadwal Tes';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -90,7 +90,7 @@ require_once __DIR__ . '/../includes/header.php';
                 </div>
                 
                 <?php if ($j['sisa_kuota'] > 0): ?>
-                <a href="<?= BASE_URL ?>/mahasiswa/daftar.php?jadwal_id=<?= $j['id'] ?>" class="btn btn-accent w-100">
+                <a href="<?= BASE_URL ?>/backend/mahasiswa/daftar.php?jadwal_id=<?= $j['id'] ?>" class="btn btn-accent w-100">
                     <i class="bi bi-pencil-square me-1"></i> Daftar Sekarang
                 </a>
                 <?php else: ?>
@@ -103,4 +103,4 @@ require_once __DIR__ . '/../includes/header.php';
 </div>
 <?php endif; ?>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

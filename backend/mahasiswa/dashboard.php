@@ -45,7 +45,7 @@ $stmt->execute([$userId]);
 $notifikasiTerbaru = $stmt->fetchAll();
 
 $pageTitle = 'Dashboard';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -107,14 +107,14 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="content-card">
             <div class="card-header-custom">
                 <h5><i class="bi bi-clock-history me-2"></i>Pendaftaran Terbaru</h5>
-                <a href="<?= BASE_URL ?>/mahasiswa/status.php" class="btn btn-sm btn-outline-secondary">Lihat Semua</a>
+                <a href="<?= BASE_URL ?>/backend/mahasiswa/status.php" class="btn btn-sm btn-outline-secondary">Lihat Semua</a>
             </div>
             <div class="card-body p-0">
                 <?php if (empty($pendaftaranTerbaru)): ?>
                 <div class="empty-state py-4">
                     <i class="bi bi-inbox d-block" style="font-size:2.5rem;"></i>
                     <p class="mb-2">Belum ada pendaftaran.</p>
-                    <a href="<?= BASE_URL ?>/mahasiswa/jadwal.php" class="btn btn-accent btn-sm">Daftar Tes Sekarang</a>
+                    <a href="<?= BASE_URL ?>/backend/mahasiswa/jadwal.php" class="btn btn-accent btn-sm">Daftar Tes Sekarang</a>
                 </div>
                 <?php else: ?>
                 <div class="table-responsive">
@@ -152,7 +152,7 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="content-card">
             <div class="card-header-custom">
                 <h5><i class="bi bi-bell me-2"></i>Notifikasi</h5>
-                <a href="<?= BASE_URL ?>/mahasiswa/notifikasi.php" class="btn btn-sm btn-outline-secondary">Semua</a>
+                <a href="<?= BASE_URL ?>/backend/mahasiswa/notifikasi.php" class="btn btn-sm btn-outline-secondary">Semua</a>
             </div>
             <div class="card-body p-0">
                 <?php if (empty($notifikasiTerbaru)): ?>
@@ -176,4 +176,4 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

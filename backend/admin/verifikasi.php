@@ -84,7 +84,7 @@ if ($filterStatus !== 'all') {
 $pembayaranList = $stmt->fetchAll();
 
 $pageTitle = 'Verifikasi Pembayaran';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -192,7 +192,7 @@ require_once __DIR__ . '/../includes/header.php';
             <div class="modal-body text-center">
                 <?php
                 $ext = strtolower(pathinfo($b['bukti_file'], PATHINFO_EXTENSION));
-                $filePath = BASE_URL . '/uploads/bukti-pembayaran/' . $b['bukti_file'];
+                $filePath = BASE_URL . '/backend/uploads/bukti-pembayaran/' . $b['bukti_file'];
                 if (in_array($ext, ['jpg', 'jpeg', 'png'])):
                 ?>
                     <img src="<?= $filePath ?>" class="img-fluid rounded" alt="Bukti Pembayaran" style="max-height: 500px;">
@@ -242,4 +242,4 @@ require_once __DIR__ . '/../includes/header.php';
 <?php endforeach; ?>
 <?php endif; ?>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

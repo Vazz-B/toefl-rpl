@@ -109,7 +109,7 @@ $pesertaList = $stmt->fetchAll();
 $jadwalFilter = $db->query("SELECT id, tanggal, lokasi FROM jadwal_tes ORDER BY tanggal DESC")->fetchAll();
 
 $pageTitle = 'Input Skor';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -131,7 +131,7 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="content-card mb-4">
     <div class="card-header-custom">
         <h5>Input Skor: <?= e($editPendaftaran['nama_lengkap'] ?? $editPendaftaran['username']) ?></h5>
-        <a href="<?= BASE_URL ?>/admin/input-skor.php" class="btn btn-outline-secondary btn-sm">
+        <a href="<?= BASE_URL ?>/backend/admin/input-skor.php" class="btn btn-outline-secondary btn-sm">
             <i class="bi bi-arrow-left me-1"></i> Kembali
         </a>
     </div>
@@ -252,7 +252,7 @@ document.getElementById('skorR').addEventListener('input', calcTotal);
                         <td><?= $p['skor_reading'] ?? '-' ?></td>
                         <td><strong class="text-accent"><?= $p['total_skor'] ?? '-' ?></strong></td>
                         <td>
-                            <a href="<?= BASE_URL ?>/admin/input-skor.php?pendaftaran_id=<?= $p['id'] ?>" class="btn btn-accent btn-sm">
+                            <a href="<?= BASE_URL ?>/backend/admin/input-skor.php?pendaftaran_id=<?= $p['id'] ?>" class="btn btn-accent btn-sm">
                                 <i class="bi bi-pencil me-1"></i> <?= $p['total_skor'] ? 'Edit' : 'Input' ?>
                             </a>
                         </td>
@@ -265,4 +265,4 @@ document.getElementById('skorR').addEventListener('input', calcTotal);
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

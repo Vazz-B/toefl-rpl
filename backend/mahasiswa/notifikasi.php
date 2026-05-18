@@ -30,7 +30,7 @@ $stmt->execute([$userId]);
 $notifikasiList = $stmt->fetchAll();
 
 $pageTitle = 'Notifikasi';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -38,7 +38,7 @@ require_once __DIR__ . '/../includes/header.php';
         <i class="bi bi-bell me-2 text-accent"></i>Notifikasi
     </h4>
     <?php if (!empty($notifikasiList)): ?>
-    <a href="<?= BASE_URL ?>/mahasiswa/notifikasi.php?read_all=1" class="btn btn-outline-secondary btn-sm">
+    <a href="<?= BASE_URL ?>/backend/mahasiswa/notifikasi.php?read_all=1" class="btn btn-outline-secondary btn-sm">
         <i class="bi bi-check-all me-1"></i> Tandai Semua Dibaca
     </a>
     <?php endif; ?>
@@ -54,7 +54,7 @@ require_once __DIR__ . '/../includes/header.php';
         </div>
         <?php else: ?>
         <?php foreach ($notifikasiList as $n): ?>
-        <div class="notif-item <?= !$n['is_read'] ? 'unread' : '' ?>" onclick="window.location='<?= BASE_URL ?>/mahasiswa/notifikasi.php?read=<?= $n['id'] ?>'">
+        <div class="notif-item <?= !$n['is_read'] ? 'unread' : '' ?>" onclick="window.location='<?= BASE_URL ?>/backend/mahasiswa/notifikasi.php?read=<?= $n['id'] ?>'">
             <div class="d-flex align-items-start gap-3">
                 <div>
                     <?php
@@ -79,4 +79,4 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

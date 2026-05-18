@@ -86,7 +86,7 @@ $jadwalList = $db->query("
 ")->fetchAll();
 
 $pageTitle = 'Kelola Jadwal';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -146,7 +146,7 @@ require_once __DIR__ . '/../includes/header.php';
                                     <i class="bi bi-pencil"></i>
                                 </button>
                                 <?php if ($j['total_daftar'] == 0): ?>
-                                <a href="<?= BASE_URL ?>/admin/jadwal.php?delete=<?= $j['id'] ?>" class="btn btn-outline-danger" data-confirm="Yakin ingin menghapus jadwal ini?">
+                                <a href="<?= BASE_URL ?>/backend/admin/jadwal.php?delete=<?= $j['id'] ?>" class="btn btn-outline-danger" data-confirm="Yakin ingin menghapus jadwal ini?">
                                     <i class="bi bi-trash"></i>
                                 </a>
                                 <?php endif; ?>
@@ -255,4 +255,4 @@ function editJadwal(data) {
 }
 </script>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>

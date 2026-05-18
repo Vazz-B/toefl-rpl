@@ -3,14 +3,14 @@
  * Landing Page
  * Halaman utama publik
  */
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/backend/includes/functions.php';
 
 // Jika sudah login, redirect ke dashboard
 if (isLoggedIn()) {
     if (isAdmin()) {
-        redirect('/admin/dashboard.php');
+        redirect('/backend/admin/dashboard.php');
     } else {
-        redirect('/mahasiswa/dashboard.php');
+        redirect('/backend/mahasiswa/dashboard.php');
     }
 }
 
@@ -29,7 +29,7 @@ $stmt = $db->query("
 $jadwalList = $stmt->fetchAll();
 
 $pageTitle = 'Beranda';
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/frontend/templates/header.php';
 ?>
 
 <!-- ============ HERO SECTION ============ -->
@@ -428,4 +428,4 @@ require_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
+<?php require_once __DIR__ . '/frontend/templates/footer.php'; ?>

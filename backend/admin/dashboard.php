@@ -38,7 +38,7 @@ $statsJadwal = $db->query("
 ")->fetchAll();
 
 $pageTitle = 'Dashboard Admin';
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../../frontend/templates/header.php';
 ?>
 
 <h4 class="fw-800 mb-4">
@@ -91,7 +91,7 @@ require_once __DIR__ . '/../includes/header.php';
         <div class="content-card">
             <div class="card-header-custom">
                 <h5><i class="bi bi-clock-history me-2"></i>Pendaftaran Terbaru</h5>
-                <a href="<?= BASE_URL ?>/admin/peserta.php" class="btn btn-sm btn-outline-secondary">Lihat Semua</a>
+                <a href="<?= BASE_URL ?>/backend/admin/peserta.php" class="btn btn-sm btn-outline-secondary">Lihat Semua</a>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -156,4 +156,4 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/../../frontend/templates/footer.php'; ?>
