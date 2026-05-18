@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-    redirect('/admin/verifikasi.php');
+    redirect('/backend/admin/verifikasi.php');
 }
 
 // Filter status

@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             setFlash('success', 'Status pendaftaran berhasil diperbarui!');
         }
     }
-    redirect('/admin/peserta.php' . ($filterJadwal ? "?jadwal=$filterJadwal" : ''));
+    redirect('/backend/admin/peserta.php' . ($filterJadwal ? "?jadwal=$filterJadwal" : ''));
 }
 
 $pageTitle = 'Data Peserta';

@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $db->commit();
                 
                 setFlash('success', 'Pendaftaran berhasil! Nomor peserta Anda: ' . $nomorPeserta);
-                redirect('/mahasiswa/status.php');
+                redirect('/backend/mahasiswa/status.php');
                 
             } catch (Exception $e) {
                 $db->rollBack();

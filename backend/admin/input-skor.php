@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             
             setFlash('success', 'Skor TOEFL berhasil disimpan!');
-            redirect('/admin/input-skor.php');
+            redirect('/backend/admin/input-skor.php');
         }
     }
 }

@@ -13,7 +13,7 @@ if (isset($_GET['read_all'])) {
     $stmt = $db->prepare("UPDATE notifikasi SET is_read = 1 WHERE user_id = ?");
     $stmt->execute([$userId]);
     setFlash('success', 'Semua notifikasi ditandai sebagai telah dibaca.');
-    redirect('/mahasiswa/notifikasi.php');
+    redirect('/backend/mahasiswa/notifikasi.php');
 }
 
 // Tandai satu sebagai dibaca
@@ -21,7 +21,7 @@ if (isset($_GET['read'])) {
     $nId = intval($_GET['read']);
     $stmt = $db->prepare("UPDATE notifikasi SET is_read = 1 WHERE id = ? AND user_id = ?");
     $stmt->execute([$nId, $userId]);
-    redirect('/mahasiswa/notifikasi.php');
+    redirect('/backend/mahasiswa/notifikasi.php');
 }
 
 // Ambil notifikasi

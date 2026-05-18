@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             }
         }
     }
-    redirect('/mahasiswa/status.php');
+    redirect('/backend/mahasiswa/status.php');
 }
 
 // Ambil semua pendaftaran mahasiswa

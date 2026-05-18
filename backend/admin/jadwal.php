@@ -38,14 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt = $db->prepare("INSERT INTO jadwal_tes (tanggal, waktu_mulai, waktu_selesai, lokasi, kuota, biaya, deskripsi, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
                 $stmt->execute([$tanggal, $waktuMulai, $waktuSelesai, $lokasi, $kuota, $biaya, $deskripsi, $status]);
                 setFlash('success', 'Jadwal tes berhasil ditambahkan!');
-                redirect('/admin/jadwal.php');
+                redirect('/backend/admin/jadwal.php');
                 
             } elseif ($action === 'update') {
                 $id = intval($_POST['id'] ?? 0);
                 $stmt = $db->prepare("UPDATE jadwal_tes SET tanggal = ?, waktu_mulai = ?, waktu_selesai = ?, lokasi = ?, kuota = ?, biaya = ?, deskripsi = ?, status = ? WHERE id = ?");
                 $stmt->execute([$tanggal, $waktuMulai, $waktuSelesai, $lokasi, $kuota, $biaya, $deskripsi, $status, $id]);
                 setFlash('success', 'Jadwal tes berhasil diperbarui!');
-                redirect('/admin/jadwal.php');
+                redirect('/backend/admin/jadwal.php');
             }
         }
     }
@@ -64,7 +64,7 @@ if (isset($_GET['delete'])) {
         $stmt->execute([$id]);
         setFlash('success', 'Jadwal tes berhasil dihapus!');
     }
-    redirect('/admin/jadwal.php');
+    redirect('/backend/admin/jadwal.php');
 }
 
 // Ambil data jadwal untuk edit

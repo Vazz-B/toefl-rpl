@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['nama_lengkap'] = $namaLengkap;
                 
                 setFlash('success', 'Profil berhasil diperbarui!');
-                redirect('/mahasiswa/profil.php');
+                redirect('/backend/mahasiswa/profil.php');
             }
         } elseif ($action === 'change_password') {
             $oldPassword = $_POST['old_password'] ?? '';
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->execute([$hashed, $user['id']]);
                 
                 setFlash('success', 'Password berhasil diubah!');
-                redirect('/mahasiswa/profil.php');
+                redirect('/backend/mahasiswa/profil.php');
             }
         }
     }

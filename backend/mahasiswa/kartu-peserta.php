@@ -24,7 +24,7 @@ $data = $stmt->fetch();
 
 if (!$data) {
     setFlash('warning', 'Kartu peserta tidak tersedia. Pastikan pembayaran sudah diverifikasi.');
-    redirect('/mahasiswa/status.php');
+    redirect('/backend/mahasiswa/status.php');
 }
 
 // Jika request download (print mode)
