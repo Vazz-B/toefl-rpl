@@ -202,7 +202,7 @@ function generateNomorPeserta($jadwalId) {
     $stmt->execute([$jadwalId]);
     $jadwal = $stmt->fetch();
     
-    $prefix = 'TOEFL-' . date('Ym', strtotime($jadwal['tanggal']));
+    $prefix = 'TOEFL-' . date('Ymd', strtotime($jadwal['tanggal']));
     
     $stmt = $db->prepare("SELECT COUNT(*) FROM pendaftaran WHERE jadwal_id = ?");
     $stmt->execute([$jadwalId]);
