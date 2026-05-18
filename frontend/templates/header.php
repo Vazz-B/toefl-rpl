@@ -175,7 +175,10 @@ $flash = getFlash();
                 <div class="navbar-brand-icon">
                     <i class="bi bi-mortarboard-fill"></i>
                 </div>
-                <span>UTM TOEFL</span>
+                <div class="navbar-brand-text">
+                    <span class="brand-name">UTM TOEFL</span>
+                    <span class="brand-sub">Universitas Trunojoyo Madura</span>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#publicNav" aria-controls="publicNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="bi bi-list fs-4" style="color: var(--primary);"></i>
@@ -189,7 +192,7 @@ $flash = getFlash();
                         <a class="nav-link" href="#layanan">Layanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#jadwal">Jadwal</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/jadwal.php">Jadwal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#cara-daftar">Cara Daftar</a>
@@ -197,13 +200,11 @@ $flash = getFlash();
                     <li class="nav-item">
                         <a class="nav-link" href="#faq">FAQ</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= BASE_URL ?>/login.php">Login</a>
-                    </li>
                 </ul>
-                <a href="<?= BASE_URL ?>/register.php" class="btn btn-nav-cta d-none d-lg-inline-flex">
-                    <i class="bi bi-person-plus me-1"></i>Daftar Sekarang
-                </a>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="<?= BASE_URL ?>/login.php" class="btn btn-nav-masuk d-none d-lg-inline-flex">Masuk</a>
+                    <a href="<?= BASE_URL ?>/register.php" class="btn btn-nav-cta d-none d-lg-inline-flex">Daftar Sekarang</a>
+                </div>
             </div>
         </div>
     </nav>

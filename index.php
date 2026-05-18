@@ -38,51 +38,55 @@ require_once __DIR__ . '/frontend/templates/header.php';
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="hero-badge">
-                    <i class="bi bi-patch-check-fill"></i>
-                    Layanan UPT Bahasa UTM
+                    <i class="bi bi-star-fill"></i>
+                    Layanan Resmi Universitas Trunojoyo Madura
                 </div>
                 <h1>Sistem Pelayanan<br><span class="hero-highlight">TOEFL</span> Online UTM</h1>
-                <p class="hero-desc">Sistem pendaftaran TOEFL berbasis web yang mudah, cepat, dan terpercaya untuk
-                    mahasiswa Universitas Trunojoyo Madura.</p>
+                <p class="hero-desc">Platform pendaftaran dan pelaksanaan tes TOEFL terpadu khusus untuk
+                    mahasiswa Universitas Trunojoyo Madura. Mudah, cepat, dan terpercaya.</p>
                 <ul class="hero-checklist">
-                    <li><i class="bi bi-check-circle-fill"></i> Pendaftaran 100% online</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Sertifikat resmi UPT Bahasa</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Hasil tes cepat & akurat</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Pendaftaran online 24/7 tanpa antri</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Jadwal tes tersedia setiap minggu</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Sertifikat digital terverifikasi resmi</li>
                 </ul>
                 <div class="hero-buttons">
                     <a href="<?= BASE_URL ?>/register.php" class="btn btn-hero-primary">
-                        <i class="bi bi-person-plus"></i> Daftar Sekarang
+                        Daftar TOEFL Sekarang <i class="bi bi-arrow-right"></i>
                     </a>
-                    <a href="#cara-daftar" class="btn btn-hero-secondary">
-                        <i class="bi bi-play-circle"></i> Cara Daftar
+                    <a href="<?= BASE_URL ?>/jadwal.php" class="btn btn-hero-secondary">
+                        Lihat Jadwal Tes
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="hero-visual">
-                    <div class="hero-illustration">
-                        <div class="hero-main-card">
-                            <i class="bi bi-mortarboard-fill"></i>
-                            <h4>TOEFL TEAP Test</h4>
-                            <p>UPT Bahasa - Universitas Trunojoyo Madura</p>
-                        </div>
+                    <!-- Student Image -->
+                    <div class="hero-image-wrapper">
+                        <img src="<?= BASE_URL ?>/frontend/assets/images/hero-student.png" alt="Mahasiswa UTM" class="hero-student-img">
                     </div>
+                    <!-- Floating Card: 5000+ Peserta -->
                     <div class="floating-card floating-card-1">
                         <div class="fc-icon green">
-                            <i class="bi bi-people-fill"></i>
+                            <i class="bi bi-mortarboard-fill"></i>
                         </div>
                         <div>
                             <div class="fc-value">5.000+</div>
                             <div class="fc-label">Peserta Lulus</div>
                         </div>
                     </div>
+                    <!-- Floating Card: Testimonial -->
+                    <div class="floating-card floating-card-quote">
+                        <div class="fc-quote-text">"Raih Skor TOEFL Terbaikmu!"</div>
+                        <div class="fc-quote-sub">Bersama ribuan mahasiswa UTM yang telah berhasil</div>
+                    </div>
+                    <!-- Floating Card: Rating -->
                     <div class="floating-card floating-card-2">
                         <div class="fc-icon gold">
                             <i class="bi bi-star-fill"></i>
                         </div>
                         <div>
                             <div class="fc-value">4.9/5</div>
-                            <div class="fc-label">Rating Layanan</div>
+                            <div class="fc-label">Rating Kepuasan</div>
                         </div>
                     </div>
                 </div>
