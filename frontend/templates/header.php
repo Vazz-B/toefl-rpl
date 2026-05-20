@@ -189,16 +189,16 @@ $flash = getFlash();
                         <a class="nav-link" href="<?= BASE_URL ?>/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#layanan">Layanan</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/#layanan">Layanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= BASE_URL ?>/jadwal.php">Jadwal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cara-daftar">Cara Daftar</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/#cara-daftar">Cara Daftar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/#faq">FAQ</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-2">
