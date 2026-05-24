@@ -272,3 +272,61 @@ function uploadFile($file, $directory = null) {
     
     return ['success' => false, 'message' => 'Gagal menyimpan file.'];
 }
+
+/**
+ * Kirim pesan ke Telegram Bot
+ */
+function sendTelegramMessage($message) {
+    if (!defined('TELEGRAM_ENABLED') || !TELEGRAM_ENABLED) {
+        return false;
+    }
+    
+    $url = 'https://api.telegram.org/bot' . TELEGRAM_BOT_TOKEN . '/sendMessage';
+    
+    $data = [
+        'chat_id' => TELEGRAM_CHAT_ID,
+        'text' => $message,
+        'parse_mode' => 'HTML',
+        'disable_web_page_preview' => false
+    ];
+    
+    $options = [
+        'http' => [
+            'method' => 'POST',
+            'header' => 'Content-Type: application/x-www-form-urlencoded',
+            'content' => http_build_query($data),
+            'timeout' => 10
+        ]
+    ];
+    
+    $context = stream_context_create($options);
+    $result = @file_get_contents($url, false, $context);
+    
+    return $result !== false;
+}
+
+/**
+ * Kirim notifikasi jadwal baru ke Telegram
+ */
+function notifyNewJadwal($jadwal) {
+    $tanggal = formatTanggal($jadwal['tanggal']);
+    $waktuMulai = formatWaktu($jadwal['waktu_mulai']);
+    $waktuSelesai = formatWaktu($jadwal['waktu_selesai']);
+    $biaya = formatRupiah($jadwal['biaya']);
+    
+    $message = "📢 <b>JADWAL TES TOEFL BARU!</b>\n\n";
+    $message .= "📅 Tanggal: <b>{$tanggal}</b>\n";
+    $message .= "🕐 Waktu: {$waktuMulai} - {$waktuSelesai} WIB\n";
+    $message .= "📍 Lokasi: {$jadwal['lokasi']}\n";
+    $message .= "💰 Biaya: <b>{$biaya}</b>\n";
+    $message .= "👥 Kuota: {$jadwal['kuota']} peserta\n";
+    
+    if (!empty($jadwal['deskripsi'])) {
+        $message .= "📝 Keterangan: {$jadwal['deskripsi']}\n";
+    }
+    
+    $message .= "\n🔗 Daftar sekarang di:\n";
+    $message .= "http://localhost" . BASE_URL . "/register.php";
+    
+    return sendTelegramMessage($message);
+}

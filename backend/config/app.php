@@ -27,3 +27,8 @@ define('SESSION_LIFETIME', 3600); // 1 jam
 
 // Timezone
 date_default_timezone_set('Asia/Jakarta');
+
+// Telegram Bot Notification
+define('TELEGRAM_BOT_TOKEN', '8836439547:AAE8On0aUDvkiAwqmvrfNPVcoUD5BNk-XIw');
+define('TELEGRAM_CHAT_ID', '@toefl_utm_notif'); // Ganti dengan username channel Telegram kamu
+define('TELEGRAM_ENABLED', true); // Set false untuk nonaktifkan notif Telegram

@@ -37,7 +37,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($action === 'create') {
                 $stmt = $db->prepare("INSERT INTO jadwal_tes (tanggal, waktu_mulai, waktu_selesai, lokasi, kuota, biaya, deskripsi, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
                 $stmt->execute([$tanggal, $waktuMulai, $waktuSelesai, $lokasi, $kuota, $biaya, $deskripsi, $status]);
-                setFlash('success', 'Jadwal tes berhasil ditambahkan!');
+                
+                // Kirim notifikasi Telegram
+                $jadwalData = [
+                    'tanggal' => $tanggal,
+                    'waktu_mulai' => $waktuMulai,
+                    'waktu_selesai' => $waktuSelesai,
+                    'lokasi' => $lokasi,
+                    'kuota' => $kuota,
+                    'biaya' => $biaya,
+                    'deskripsi' => $deskripsi
+                ];
+                $telegramSent = notifyNewJadwal($jadwalData);
+                
+                $flashMsg = 'Jadwal tes berhasil ditambahkan!';
+                if ($telegramSent) {
+                    $flashMsg .= ' Notifikasi Telegram terkirim ✅';
+                }
+                setFlash('success', $flashMsg);
                 redirect('/backend/admin/jadwal.php');
                 
             } elseif ($action === 'update') {
